@@ -1,18 +1,18 @@
 package calculator;
 
 public class StringAdderCalculator {
-    private PositiveNumbers positiveNumbers;
+    private NonNegativeNumbers nonNegativeNumbers;
 
     public StringAdderCalculator(String input) {
         StringParser stringParser = new StringParser(input);
-        positiveNumbers = stringParser.parseByDelimiter();
+        nonNegativeNumbers = stringParser.parseByDelimiter();
     }
 
-    public PositiveNumber calculate() {
-        int sum = positiveNumbers.getPositiveNumbers()
+    public NonNegativeNumber calculate() {
+        int sum = nonNegativeNumbers.getPositiveNumbers()
                 .stream()
-                .mapToInt(PositiveNumber::getNumber)
+                .mapToInt(NonNegativeNumber::getNumber)
                 .sum();
-        return new PositiveNumber(sum);
+        return new NonNegativeNumber(sum);
     }
 }

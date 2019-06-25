@@ -14,8 +14,8 @@ class DelimitersTest {
     @BeforeEach
     void setUp() {
         delimiters = new Delimiters();
-        commaDelimiter = new Delimiter(",");
-        colonDelimiter = new Delimiter(":");
+        commaDelimiter = Delimiter.COMMA;
+        colonDelimiter = Delimiter.COLON;
     }
 
     @Test

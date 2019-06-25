@@ -11,8 +11,8 @@ public class Delimiters {
 
     public Delimiters() {
         delimiters = new ArrayList<>();
-        delimiters.add(new Delimiter(","));
-        delimiters.add(new Delimiter(":"));
+        delimiters.add(Delimiter.COMMA);
+        delimiters.add(Delimiter.COLON);
     }
 
     private Delimiters(List<Delimiter> delimiters, Delimiter delimiter) {

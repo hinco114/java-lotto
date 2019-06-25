@@ -4,16 +4,16 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class PositiveNumbers {
-    private List<PositiveNumber> positiveNumbers;
+public class NonNegativeNumbers {
+    private List<NonNegativeNumber> positiveNumbers;
 
-    public PositiveNumbers(List<String> strings) {
+    public NonNegativeNumbers(List<String> strings) {
         positiveNumbers = strings.stream()
-                .map(string -> new PositiveNumber(Integer.parseInt(string)))
+                .map(string -> new NonNegativeNumber(Integer.parseInt(string)))
                 .collect(Collectors.toList());
     }
 
-    public List<PositiveNumber> getPositiveNumbers() {
+    public List<NonNegativeNumber> getPositiveNumbers() {
         return Collections.unmodifiableList(positiveNumbers);
     }
 }

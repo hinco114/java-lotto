@@ -5,14 +5,15 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class StringParser {
-    public static final String ADDITIONAL_DELIMITER_REGEX = "//(.)\n(.*)";
+    private static final String ADDITIONAL_DELIMITER_REGEX = "//(.)\n(.*)";
+    public static final Pattern additionalDelimiterPattern = Pattern.compile(ADDITIONAL_DELIMITER_REGEX);
     private Matcher additionalDelimiterMatcher;
     private String input;
     private Delimiters delimiters;
 
     public StringParser(String input) {
         this.input = input;
-        additionalDelimiterMatcher = Pattern.compile(ADDITIONAL_DELIMITER_REGEX).matcher(input);
+        additionalDelimiterMatcher = additionalDelimiterPattern.matcher(input);
         delimiters = new Delimiters();
         parseAndReSetInput();
     }
@@ -36,8 +37,8 @@ public class StringParser {
         }
     }
 
-    public PositiveNumbers parseByDelimiter() {
-        return new PositiveNumbers(
+    public NonNegativeNumbers parseByDelimiter() {
+        return new NonNegativeNumbers(
                 Arrays.asList(input.split(delimiters.getDelimitersRegexString()))
         );
     }

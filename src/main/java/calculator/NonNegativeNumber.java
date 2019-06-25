@@ -2,11 +2,11 @@ package calculator;
 
 import java.util.Objects;
 
-public class PositiveNumber {
+public class NonNegativeNumber {
     public static final int MIN_NUMBER_INPUT = 0;
     private int number;
 
-    public PositiveNumber(int number) {
+    public NonNegativeNumber(int number) {
         if (number < MIN_NUMBER_INPUT) {
             throw new RuntimeException("음수는 계산할 수 없습니다.");
         }
@@ -21,7 +21,7 @@ public class PositiveNumber {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        PositiveNumber that = (PositiveNumber) o;
+        NonNegativeNumber that = (NonNegativeNumber) o;
         return number == that.number;
     }
 

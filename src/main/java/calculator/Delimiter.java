@@ -3,6 +3,8 @@ package calculator;
 import java.util.Objects;
 
 public class Delimiter {
+    public static Delimiter COMMA = new Delimiter((","));
+    public static Delimiter COLON = new Delimiter((":"));
     private String delimiter;
 
     public Delimiter(String delimiter) {

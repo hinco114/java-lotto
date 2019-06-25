@@ -12,7 +12,7 @@ public class StringParserTest {
         String input = "2";
         StringParser stringParser = new StringParser(input);
         assertThat(stringParser.parseByDelimiter().getPositiveNumbers()).contains(
-                new PositiveNumber(2)
+                new NonNegativeNumber(2)
         );
     }
 
@@ -22,8 +22,8 @@ public class StringParserTest {
         String input = "1,2";
         StringParser stringParser = new StringParser(input);
         assertThat(stringParser.parseByDelimiter().getPositiveNumbers()).contains(
-                new PositiveNumber(1),
-                new PositiveNumber(2)
+                new NonNegativeNumber(1),
+                new NonNegativeNumber(2)
         );
     }
 
@@ -33,8 +33,8 @@ public class StringParserTest {
         String input = "1:2";
         StringParser stringParser = new StringParser(input);
         assertThat(stringParser.parseByDelimiter().getPositiveNumbers()).contains(
-                new PositiveNumber(1),
-                new PositiveNumber(2)
+                new NonNegativeNumber(1),
+                new NonNegativeNumber(2)
         );
     }
 
@@ -44,11 +44,11 @@ public class StringParserTest {
         String input = "1,2,3:4:5";
         StringParser stringParser = new StringParser(input);
         assertThat(stringParser.parseByDelimiter().getPositiveNumbers()).contains(
-                new PositiveNumber(1),
-                new PositiveNumber(2),
-                new PositiveNumber(3),
-                new PositiveNumber(4),
-                new PositiveNumber(5)
+                new NonNegativeNumber(1),
+                new NonNegativeNumber(2),
+                new NonNegativeNumber(3),
+                new NonNegativeNumber(4),
+                new NonNegativeNumber(5)
         );
     }
 
@@ -58,9 +58,9 @@ public class StringParserTest {
         String input = "//;\n1;2;3";
         StringParser stringParser = new StringParser(input);
         assertThat(stringParser.parseByDelimiter().getPositiveNumbers()).contains(
-                new PositiveNumber(1),
-                new PositiveNumber(2),
-                new PositiveNumber(3)
+                new NonNegativeNumber(1),
+                new NonNegativeNumber(2),
+                new NonNegativeNumber(3)
         );
     }
 }
