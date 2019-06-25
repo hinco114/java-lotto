@@ -4,20 +4,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LottoNumbers {
-    private List<LottoNumber> lottoNumbers;
+    private final List<LottoNumber> lottoNumbers;
 
     public LottoNumbers() {
         this.lottoNumbers = new ArrayList<>();
     }
 
-    private LottoNumbers(List<LottoNumber> lottoNumbers, LottoNumber lottoNumber) {
+    public LottoNumbers(List<LottoNumber> lottoNumbers) {
         this.lottoNumbers = lottoNumbers;
-        this.lottoNumbers.add(lottoNumber);
     }
 
     public LottoNumbers addLottoNumber(int number) {
+        LottoNumbers newLottoNumbers = new LottoNumbers(new ArrayList<>(this.lottoNumbers));
         LottoNumber lottoNumber = new LottoNumber(number);
-        return new LottoNumbers(lottoNumbers, lottoNumber);
+        newLottoNumbers.lottoNumbers.add(lottoNumber);
+        return newLottoNumbers;
     }
 
     public int size() {

@@ -16,6 +16,8 @@ public class LottoNumbersTest {
         lottoNumberList.add(new LottoNumber(1));
         lottoNumberList.add(new LottoNumber(2));
         LottoNumbers lottoNumbers = new LottoNumbers(lottoNumberList);
+
+        assertThat(lottoNumbers.size()).isEqualTo(2);
     }
 
     @Test
