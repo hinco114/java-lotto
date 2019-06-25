@@ -2,6 +2,7 @@ package lotto;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class LottoNumbers {
     private final List<LottoNumber> lottoNumbers;
@@ -10,8 +11,15 @@ public class LottoNumbers {
         this.lottoNumbers = new ArrayList<>();
     }
 
-    public LottoNumbers(List<LottoNumber> lottoNumbers) {
+    private LottoNumbers(List<LottoNumber> lottoNumbers) {
         this.lottoNumbers = lottoNumbers;
+    }
+
+    public static LottoNumbers from(List<Integer> integers) {
+        List<LottoNumber> lottoNumbers = integers.stream()
+                .map(LottoNumber::new)
+                .collect(Collectors.toList());
+        return new LottoNumbers(lottoNumbers);
     }
 
     public LottoNumbers addLottoNumber(int number) {
