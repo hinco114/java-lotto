@@ -3,7 +3,7 @@ package lotto;
 public class LottoNumber {
     public static int MIN_LOTTO_NUMBER = 1;
     public static int MAX_LOTTO_NUMBER = 45;
-    private int number;
+    private final int number;
 
     public LottoNumber(int number) {
         if (number < MIN_LOTTO_NUMBER || number > MAX_LOTTO_NUMBER) {
